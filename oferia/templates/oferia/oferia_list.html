@@ -6,5 +6,17 @@
 </head>
 <body>
 Hello that is my first website
+
+{% for offer in allOffers %}
+
+    <div>
+
+        <h1> {{ offer.title }}</h1>
+        <p> published: {{ offer.created_date }} </p>
+        <p>{{ offer.text|linebreaksbr }}</p>
+
+    </div>
+{% endfor %}
+
 </body>
 </html>
