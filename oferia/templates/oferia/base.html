@@ -13,11 +13,13 @@
 <body>
 Hello that is my first website
 
-<a href = "{% url 'offer_new' %}">Add new </a>
+{% if user.is_authenticated %}
+    <a href = "{% url 'offer_new' %}">Add new </a>
+{% endif %}
 
 
-   {% block content %}
-   {% endblock %}
+{% block content %}
+{% endblock %}
 
 
 </body>
