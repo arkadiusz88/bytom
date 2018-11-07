@@ -5,7 +5,7 @@
 
         <div>
 
-            <h1> <a href="">{{ offer.title }}</a></h1>
+            <h1> <a href="{% url 'offer_detail' pk=offer.pk %}">{{ offer.title }}</a></h1>
             <p> published: {{ offer.created_date }} </p>
             <p>{{ offer.text|linebreaksbr }}</p>
 

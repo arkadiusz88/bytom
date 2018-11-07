@@ -1,0 +1,14 @@
+{% extends 'oferia/base.html' %}
+
+{% block content %}
+<p>Hello</p>
+
+{% if detailedOffer.published_date %}
+    {{ detailedOffer.published_date }}
+{% endif %}
+
+<h1> {{ detailedOffer.title }}  </h1>
+<p> {{ detailedOffer.text }} </p>
+
+
+{% endblock %}
