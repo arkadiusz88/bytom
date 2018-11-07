@@ -7,6 +7,10 @@
     {{ detailedOffer.published_date }}
 {% endif %}
 
+{% if detailedOffer.user %}
+    {{ detailedOffer.user }}
+{% endif %}
+
 <h1> {{ detailedOffer.title }}  </h1>
 <p> {{ detailedOffer.text }} </p>
 
