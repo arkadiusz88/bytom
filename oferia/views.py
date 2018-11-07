@@ -14,15 +14,31 @@ def offer_detail(request, pk):
     return render(request, "oferia/offer_detail.html", {'detailedOffer': offer})
 
 
-def offer_new_edit(request):
+def offer_new(request):
     if request.method == 'POST':
         form = OfferForm(request.POST)
         if form.is_valid():
             offer = form.save(commit = False)
-            offer.author =  request.user
+            offer.author = request.user
             offer.published_date = timezone.now()
             offer.save()
             return redirect('offer_detail', pk = offer.pk)
     else:
         form = OfferForm
-        return render(request, "oferia/offer_edit.html", {'form' : form})
+    return render(request, "oferia/offer_edit.html", {'form' : form})
+
+
+def offer_edit(request, pk):
+    offer = get_object_or_404(Offer, pk = pk)
+
+    if request.method == 'POST':
+        form = OfferForm(request.POST, instance=offer)
+        if form.is_valid():
+            offer = form.save(commit = False)
+            offer.author = request.user
+            offer.published_date = timezone.now()
+            offer.save()
+            return redirect('offer_detail', pk = offer.pk)
+    else:
+        form = OfferForm(instance=offer)
+    return render(request, "oferia/offer_edit.html", {'form' : form})

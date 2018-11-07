@@ -1,7 +1,7 @@
 {% extends 'oferia/base.html' %}
 
 {% block content %}
-<p>Hello</p>
+<p>Hello</p><a href="{% url 'offer_edit' pk=detailedOffer.pk %}">Edit offer</a>
 
 {% if detailedOffer.published_date %}
     {{ detailedOffer.published_date }}
