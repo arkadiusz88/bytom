@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Hello that is my first website
+{% extends 'oferia/base.html' %}
 
-{% for offer in allOffers %}
+{%block content%}
+    {% for offer in allOffers %}
 
-    <div>
+        <div>
 
-        <h1> {{ offer.title }}</h1>
-        <p> published: {{ offer.created_date }} </p>
-        <p>{{ offer.text|linebreaksbr }}</p>
+            <h1> <a href="">{{ offer.title }}</a></h1>
+            <p> published: {{ offer.created_date }} </p>
+            <p>{{ offer.text|linebreaksbr }}</p>
 
-    </div>
-{% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
 
-</body>
-</html>
+
