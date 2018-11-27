@@ -3,11 +3,10 @@
 {%block content%}
     {% for offer in allOffers %}
 
-        <div>
+        <div class="offer">
 
             <h1> <a href="{% url 'offer_detail' pk=offer.pk %}">{{ offer.title }}</a></h1>
-            <p> published: {{ offer.created_date }} </p>
-            <p>{{ offer.text|linebreaksbr }}</p>
+             published: {{ offer.created_date }} {{ offer.text|linebreaksbr }}
 
         </div>
     {% endfor %}

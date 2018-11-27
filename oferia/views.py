@@ -42,3 +42,11 @@ def offer_edit(request, pk):
     else:
         form = OfferForm(instance=offer)
     return render(request, "oferia/offer_edit.html", {'form' : form})
+
+
+def job_list(request):
+    return render(request, "oferia/job_search.html")
+
+def sign_up(request):
+    return render(request, "oferia/sign_up.html")
+
